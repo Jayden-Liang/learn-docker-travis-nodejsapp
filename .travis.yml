@@ -4,7 +4,7 @@ services:
 
 before_install:
   - docker build -t jayden003/react-test -f ./client/Dockerfile.dev ./client
-  - docker build -t jayden003/react-test-nginx ./nginx/Dockerfile.dev ./nginx
+  - docker build -t jayden003/react-test-nginx -f ./nginx/Dockerfile.dev ./nginx
 
 script:
   - docker run jayden003/react-test npm test -- --coverage
